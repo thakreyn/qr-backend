@@ -1,42 +1,39 @@
-const mongoose = require('mongoose')
+const express = require('express')
+const router = express.Router();
 
-// Creating a Scema for a product
-/*
- Product Schema: (product-data db)
-        - store id
-        - product id
-        - name
-        - price 
-        - description
-*/
+const Product = require("../models/products")
 
-const ProductSchema = new mongoose.Schema(
-    {
-        storeid:{
-            type: Number,
-            require:true
-        },
-        productid:{
-            type: Number,
-            require:true
-        },
-        name:{
-            type: String,
-            required:true
-        },
-        price:{
-            type: Number,
-            require:true
-        },
-        description:{
-            type: String,
-            required: true
-        }
 
-    },
-    {
-        collection: 'product-data'
-    }
-)
 
-module.exports = new mongoose.model('Product', ProductSchema);
+router.get('/:productid', (req,res) => {
+    console.log(req.params.productid)
+    // Product.findById(req.params.productid).then(
+    //     product => {
+    //         if(product) res.send(product);
+    //         res.status(404)
+    //     }
+    // ).catch((error) => {
+    //     res.status(500).send("Something went wrong")
+    // })
+})
+
+// router.get('/all', (req, res) => {
+//     console.log("This")
+//     Product.find()
+//     .then((products) => {
+//         if(products){
+//             res.send(products)
+//         }
+//         else
+//         {
+//             res.send("Nahi jama")
+//         }
+//     })
+// })
+
+router.get('/', (req, res) => {
+    console.log(req.body, "why");
+    res.send(req.body.query)
+})
+
+module.exports = router;
