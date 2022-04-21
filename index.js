@@ -9,7 +9,6 @@ const productsRoute = require('./routes/products')
 const Product = require('./models/products')
 const Directions = require('./models/direction')
 
-// username : password12345
 
 const PORT = process.env.PORT || 4000
 
