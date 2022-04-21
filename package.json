@@ -1,0 +1,20 @@
+{
+  "name": "qr-database",
+  "version": "1.0.0",
+  "description": "It is a backend REST API for QR Code detection app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "nodemon index.js"
+  },
+  "author": "Yash Thakre (yashnthakre)",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.3.0"
+  }
+}
